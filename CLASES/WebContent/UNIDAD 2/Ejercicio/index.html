@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="author" content="@gmoises926">
+        <meta name="Description" content="Rectangulos">
+    </head>
+    <body>
+        <script src="Rectangle.js"></script>
+        <script src="Validator.js"></script>
+        <script src="ErrorManager.js"></script>
+        <form onsubmit="draw();">
+            <input type="text" placeholder="Cantidad de rectangulos" id="number" oninput="new Validator().verifyDataType('number');">
+            <br>
+            <button type="submit">Generar Rectangulos</button>
+        </form>
+        <script>
+
+            function draw(){
+                var validator = new Validator();
+                var number = document.querySelector("#number").value;
+                if(validator.isNumber(number) && validator.isBetween(number, 0, 2001)){
+                    var diff = 100/number;
+                    for(let i=0; i<= number; i++){
+                        let heigthWhidth = 100 - (diff*i);
+                        let leftTop = (100-heigthWhidth)/2
+                        let randomRGB = `rgb(${validator.random(0,255)},${validator.random(0,255)},${validator.random(0,255)})`;
+                        var rectangle = new Rectangle("black", "0", "solid", randomRGB, "fixed", leftTop , leftTop, heigthWhidth, heigthWhidth, i, "&nbsp");
+
+                        console.log(rectangle.toString());
+                        document.querySelector("body").innerHTML = document.querySelector("body").innerHTML + rectangle.toString();
+                    }
+                    
+                }else{
+                    var errorManager = new ErrorManager();
+                    document.querySelector("body").innerHTML = document.querySelector("body").innerHTML + "<div id='error'></div>";
+                    error = document.querySelector("#error");
+                    errorManager.show(error);
+
+                    return false;
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>

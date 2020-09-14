@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	font-family:Arial;
+}
+body{
+	background-color:white;
+}
+
+form{
+	position:fixed;
+	width:25vw;
+	left:37.5vw;
+	height:auto;
+	top:42vh;
+	background-color:#eeeeee;
+	border-bottom: 4px solid #888888;
+	border-right: 4px solid #888888;
+	color: #333333;
+	text-align:center;
+}
+
+form input, form buttom{
+	position: relative;
+	font-size: 1.5em;
+	margin: 1%;
+	width: 90%;
+}

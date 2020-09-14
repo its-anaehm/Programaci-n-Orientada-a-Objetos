@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	paddin:0;
+	font-family:Arial;
+}
+
+body{
+	background-color:white;
+}
+
+.centerPage{
+	position:fixed;
+	top:48vh;
+	width:10vw;
+	left:45vw;
+	text-aling:center;
+	height:auto;
+}
+
+.bigSize{
+	font-size:10em;
+}
+
+.red{
+	color:red;
+}
